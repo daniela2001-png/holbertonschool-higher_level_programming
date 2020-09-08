@@ -6,7 +6,7 @@ def replace_in_list(my_list, idx, element):
             # inserto el nuevo elemento y lo reemplazo por el eliminado
             my_list.insert(idx, element)
             return (my_list)
-        if (idx < 0):
+        elif (idx < 0):
             return (my_list)
-        if (idx > len(my_list)):
+        elif (idx > len(my_list)):
             return (my_list)
