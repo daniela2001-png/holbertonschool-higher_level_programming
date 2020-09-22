@@ -11,7 +11,7 @@ class Square:
     define a new methods
     """
 
-    def __init__(self, size):
+    def __init__(self, size=0):
         """
         start instances
         """
@@ -26,7 +26,7 @@ class Square:
         """
         retorno el area del cuadrado
         """
-        return (self.__size * self.__size)
+        return (self.__size) ** 2
 
     @property
     def size(self):
