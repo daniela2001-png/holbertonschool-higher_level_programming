@@ -9,8 +9,6 @@ class Square:
         this class contains a unique private
         attribute because the theme of
         perimeter areas of a square is essential
-
-
     """
 
     def __init__(self, size=0):
