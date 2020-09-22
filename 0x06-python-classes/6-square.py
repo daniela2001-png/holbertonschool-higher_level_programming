@@ -26,7 +26,7 @@ class Square:
         """
         return the area of a square
         """
-        return (self.__size * self.__size)
+        return (self.__size)**2
 
     @property
     def size(self):
@@ -58,7 +58,6 @@ class Square:
                 print(' '*self.__position[0] + '#' * self.__size)
         else:
             print()
-            return
 
     @property
     def position(self):
