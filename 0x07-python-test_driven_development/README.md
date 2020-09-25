@@ -1,4 +1,4 @@
-#0x07. Python - Test-driven development
+# 0x07. Python - Test-driven development
 
 ------------
 
@@ -7,12 +7,12 @@
 ------------
 ## Tasks
 
-###0. Integers addition mandatory
+### 0. Integers addition mandatory
 
 ------------
 
 
-#####Write A Function That  Adds 2 Integers:
+##### Write A Function That  Adds 2 Integers:
 
 ------------
 
@@ -62,12 +62,12 @@
 
 ------------
 
-###1. Divide a matrix mandatory
+### 1. Divide a matrix mandatory
 
 ------------
 
 
-#####Write a function that divides all elements of a matrix:
+##### Write a function that divides all elements of a matrix:
 
 ------------
 &bull;  Prototype: Def Matrix_divided(Matrix, Div):
