@@ -1,0 +1,68 @@
+The ```1-my_list``` module
+======================
+
+Using ```MyList```
+-------------------
+
+Importing the function from the module:
+        >>> MyList = __import__('1-my_list').MyList
+
+Checking for empty list:
+
+	 >>> l = MyList()
+	 >>> l.print_sorted()
+	 []
+
+	 >>> print(type(l))
+	 <class '1-my_list.MyList'>
+
+     >>> l.append(2)
+     >>> l.append(-1)
+     >>> l.append(0)
+     >>> l.append(-10000000000000000000000000000000000000000000000000000000000000000000)
+     >>> l.append(-8374876347653267452387348563487)
+     >>> l.append(2485784754)
+     >>> l.append(46463735935)
+     >>> l.append(3)
+     >>> print(l)
+     [2, -1, 0, -10000000000000000000000000000000000000000000000000000000000000000000, -8374876347653267452387348563487, 2485784754, 46463735935, 3]
+     >>> l.print_sorted()
+     [-10000000000000000000000000000000000000000000000000000000000000000000, -8374876347653267452387348563487, -1, 0, 2, 3, 2485784754, 46463735935]
+
+    >>> l.print_sorted(self)
+    Traceback (most recent call last):
+    NameError: name 'self' is not defined
+
+    >>> print(isinstance(l, MyList))
+    True
+
+    >>> l is MyList()
+    False
+
+    >>> l2 = MyList()
+
+    >>> l2.append("hi")
+    >>> l2.append("hihfiuergiuerg")
+    >>> l2.append("hihfiuergiuerg")
+    >>> l2.append("2")
+    >>> l2
+    ['hi', 'hihfiuergiuerg', 'hihfiuergiuerg', '2']
+
+    >>> l2.print_sorted()
+    ['2', 'hi', 'hihfiuergiuerg', 'hihfiuergiuerg']
+
+    >>> l3 = MyList()
+    >>> l3.append('inf')
+    >>> l3
+    ['inf']
+
+    >>> l4 = MyList()
+    >>> l4.append(2)
+    >>> l4.append(0/0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+
+
+
+

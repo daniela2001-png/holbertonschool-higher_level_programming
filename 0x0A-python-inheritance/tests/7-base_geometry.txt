@@ -1,0 +1,9 @@
+
+>>> validator = __import__('7-base_geometry').BaseGeometry
+>>> test = validator()
+>>> test.integer_validator("Prueba", 5)
+
+>>> test.integer_validator(5, "5")
+Traceback (most recent call last):
+	  	...
+TypeError: 5 must be an integer
