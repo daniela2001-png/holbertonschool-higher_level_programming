@@ -22,8 +22,8 @@ class Student:
         """
         return dict of my object created
         """
-        my_dict = {}
         if attrs:
+            my_dict = {}
             for i in attrs:
                 if i in self.__dict__:
                     my_dict[i] = self.__dict__[i]
