@@ -22,10 +22,11 @@ class Student:
         """
         return dict of my object created
         """
-        if attrs:
+        if attrs is not None:
             my_dict = {}
             for i in attrs:
                 if i in self.__dict__:
                     my_dict[i] = self.__dict__[i]
             return my_dict
-        return(self.__dict__)
+        else:
+            return(self.__dict__)
