@@ -20,4 +20,4 @@ except:
     lol = []
 
 """aqui escribo sobre la lista sin modificarla"""
-save_to_json_file(argv[1:] + lol, filename)
+save_to_json_file(lol + argv[1:], filename)
