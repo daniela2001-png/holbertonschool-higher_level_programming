@@ -17,7 +17,7 @@ filename = "add_item.json"
 
 try:
     lol = load_from_json_file(filename)
-except Exception as e:
+except:
     lista = []
 
 """aqui escribo sobre la lista sin modificarla"""
