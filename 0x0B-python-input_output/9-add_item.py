@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 a script that adds all arguments to a Python list, and then save them to a file
 
@@ -18,7 +17,7 @@ filename = "add_item.json"
 try:
     lol = load_from_json_file(filename)
 except:
-    lista = []
+    lol = []
 
 """aqui escribo sobre la lista sin modificarla"""
 save_to_json_file(argv[1:] + lol, filename)
