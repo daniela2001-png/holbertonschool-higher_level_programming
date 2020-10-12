@@ -87,3 +87,30 @@ class Rectangle(Base):
         retorna el area d eun rectangulo
         """
         return(self.width * self.height)
+
+    def display(self):
+        """
+        muestra el ancho y largo representado por
+        el simbolo "#" aun no usamos "x" o "y"
+        """
+        print((self.y) * "\n" + ((self.x) * " " + "#" * self.width + '\n') * self.height, end="")
+
+    def __str__(self):
+        """
+        string format de mi subclase
+        """
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        """
+        retrona ordenamente los atributos
+        a traves de *args
+        """
+        if args:
+            if args is not None:
+                lista = ["id", "width", "height", "x", "y"]
+                for i, j in zip(args, lista):
+                    setattr(self, j, i)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
