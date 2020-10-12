@@ -4,7 +4,6 @@
 creo una clase padre llamada Base
 """
 
-
 class Base:
     """
     creo una instacia de clase privada
