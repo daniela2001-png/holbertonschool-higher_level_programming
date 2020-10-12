@@ -31,3 +31,38 @@ class Square(Rectangle):
         retorna la representación string de la clase hija
         """
         return("[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id, self.x, self.y, self.width))
+
+    @property
+    def size(self):
+        """
+        retorno el valor modifacdo por el setter
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """
+        asigno el valor dado por el user
+        """
+        self.width = value
+
+    def update(self, *args, **kwargs):
+        """
+        aqui sobrescribo mi metodo update
+        con el de mi clase padre Rectangle
+        """
+        super().update(*args, **kwargs)
+
+    def to_dictionary(self):
+        """
+         retorno un diccionario de mi clase
+        para mostrar sus atributos y valores de los mismos
+        """
+        x = super().to_dictionary()
+        y = x.copy()
+        y["size"] = self.width
+        if y["height"] and y["width"]:
+            del y["height"]
+            del y["width"]
+        return(y)
+
