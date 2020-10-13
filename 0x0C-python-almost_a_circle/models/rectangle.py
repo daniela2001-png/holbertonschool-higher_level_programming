@@ -34,12 +34,16 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """return the value modificated"""
+        """
+        return the value modificated
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """setter of width"""
+        """
+        setter of width
+        """
         if type(value) is not int:
             raise TypeError("width must be an integer")
         elif value <= 0:
@@ -48,12 +52,16 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """return the value modificated"""
+        """
+        return the value modificated
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """setter of width"""
+        """
+        setter of width
+        """
         if type(value) is not int:
             raise TypeError("height must be an integer")
         elif value <= 0:
@@ -62,12 +70,16 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """return the value modificated"""
+        """
+        return the value modificated
+        """
         return self.__x
 
     @x.setter
     def x(self, value):
-        """setter of width"""
+        """
+        setter of width
+        """
         if type(value) is not int:
             raise TypeError("x must be an integer")
         elif value < 0:
@@ -76,12 +88,16 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """return the value modificated"""
+        """
+        return the value modificated
+        """
         return self.__y
 
     @y.setter
     def y(self, value):
-        """setter of width"""
+        """
+        setter of width
+        """
         if type(value) is not int:
             raise TypeError("y must be an integer")
         elif value < 0:
@@ -90,7 +106,7 @@ class Rectangle(Base):
 
     def area(self):
         """
-        retorna el area d eun rectangulo
+        retorna el area de un rectangulo
         """
         return(self.width * self.height)
 
@@ -110,7 +126,7 @@ class Rectangle(Base):
                                                                  self.x,
                                                                  self.y,
                                                                  self.width,
-                                                                 self.height, end="")
+                                                                 self.height)
 
     def update(self, *args, **kwargs):
         """
