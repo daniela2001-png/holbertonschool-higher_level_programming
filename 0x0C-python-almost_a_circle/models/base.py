@@ -47,10 +47,8 @@ class Base:
                 # aqui creo mi lista de dicts
                 my_lists_dict.append(i)
             lista_dict = cls.to_json_string(my_lists_dict)
-            with open(filename, "w") as f:
+            with open(filename, "w", encoding="UTF-8") as f:
                 f.write(lista_dict)
-        else:
-            list_objs = []
 
     @staticmethod
     def from_json_string(json_string):
