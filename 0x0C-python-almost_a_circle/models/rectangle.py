@@ -110,7 +110,7 @@ class Rectangle(Base):
                                                                  self.x,
                                                                  self.y,
                                                                  self.width,
-                                                                 self.height)
+                                                                 self.height, end="")
 
     def update(self, *args, **kwargs):
         """
