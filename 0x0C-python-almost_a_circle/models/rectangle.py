@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 
 clase Rectangle que hereda de Base
@@ -16,6 +15,8 @@ osea acceder a ellos como si fueran publicos
 pero en realidad estamo accediendo es al setter o getter
 
 """
+
+
 from models.base import Base
 
 
