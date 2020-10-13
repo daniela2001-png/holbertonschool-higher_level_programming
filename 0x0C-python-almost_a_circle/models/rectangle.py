@@ -5,26 +5,30 @@
 clase Rectangle que hereda de Base
 cuando se desean atributos privados en una clase,
 se deben delcarar e inicializar en el constructor _init_,
-adicionalmente es necesario crear sus funciones de getter(devulve el valor del atributo)
-y setter(modifica el valor del atributo), estos metodos acuden directamente al atributo,
-pero de ahi en adelante la idea es llamar a los atributos a partir de las funciones getter
-y setter y no directamente al atributo, osea acceder a ellos como si fueran publicos
+adicionalmente es necesario crear sus
+funciones de getter(devulve el valor del atributo)
+y setter(modifica el valor del atributo),
+estos metodos acuden directamente al atributo,
+pero de ahi en adelante la idea es llamar
+a los atributos a partir de las funciones getter
+y setter y no directamente al atributo,
+osea acceder a ellos como si fueran publicos
 pero en realidad estamo accediendo es al setter o getter
 
 """
 from models.base import Base
+
 
 class Rectangle(Base):
     """
     uso la funcion super para tomar la logica del init de la clase padre
     """
     def __init__(self, width, height, x=0, y=0, id=None):
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
-
 
     @property
     def width(self):
@@ -93,13 +97,18 @@ class Rectangle(Base):
         muestra el ancho y largo representado por
         el simbolo "#" aun no usamos "x" o "y"
         """
-        print((self.y) * "\n" + ((self.x) * " " + "#" * self.width + '\n') * self.height, end="")
+        print((self.y) * "\n" + ((self.x) * " " + "#" * self.width + '\n')
+              * self.height, end="")
 
     def __str__(self):
         """
         string format de mi subclase
         """
-        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id, self.x, self.y, self.width, self.height)
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id,
+                                                                 self.x,
+                                                                 self.y,
+                                                                 self.width,
+                                                                 self.height)
 
     def update(self, *args, **kwargs):
         """
@@ -120,5 +129,6 @@ class Rectangle(Base):
         retorno un diccionario de mi clase
         para mostrar sus atributos y valores de los mismos
         """
-        my_dict = {"id":self.id, "x":self.x, "y":self.y, "height":self.height, "width":self.width}
+        my_dict = {"id": self.id, "x": self.x, "y": self.y,
+                   "height": self.height, "width": self.width}
         return my_dict
