@@ -67,13 +67,13 @@ class Base:
 
         """
         # creo el dummy que sera la instacia fictisia de mi clase
-        dummy = 0
         if cls.__name__ == "Rectangle":
             dummy = cls(2, 4, 8, 10)
-            dummy.update(**dictionary)
-        if cls.__name__ == "Square":
+        elif cls.__name__ == "Square":
             dummy = cls(3, 4, 4)
-            dummy.update(**dictionary)
+        else:
+            dummy = None
+        dummy.update(**dictionary)
         return dummy
 
     @classmethod
