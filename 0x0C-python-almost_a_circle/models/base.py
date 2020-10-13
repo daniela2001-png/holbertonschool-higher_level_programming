@@ -68,9 +68,9 @@ class Base:
         """
         # creo el dummy que sera la instacia fictisia de mi clase
         if cls.__name__ == "Rectangle":
-            dummy = cls(2, 4, 8, 10)
+            dummy = cls(2, 4)
         elif cls.__name__ == "Square":
-            dummy = cls(3, 4, 4)
+            dummy = cls(3, 4)
         else:
             dummy = None
         dummy.update(**dictionary)
