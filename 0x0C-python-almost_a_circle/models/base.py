@@ -91,3 +91,34 @@ class Base:
             return my_list
         except:
             return my_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        csv loader
+        """
+        my_lists_dict = []
+        filename = cls.__name__ + ".csv"
+        if list_objs is not None:
+            for i in list_objs:
+                # aqui creo mi lista de dicts
+                my_lists_dict.append(cls.to_dictionary(i))
+        lista_dict = cls.to_json_string(my_lists_dict)
+        with open(filename, "w", encoding="UTF-8") as f:
+            f.write(lista_dict)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        load file csv
+        """
+        my_list = []
+        try:
+            filename = cls.__name__ + ".csv"
+            with open(filename, "r") as f:
+                x = cls.from_json_string((f.read()))
+                for i in x:
+                    my_list.append(cls.create(**i))
+            return my_list
+        except:
+            return my_list
