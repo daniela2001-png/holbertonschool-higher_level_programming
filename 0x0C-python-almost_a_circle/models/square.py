@@ -60,7 +60,14 @@ class Square(Rectangle):
         aqui sobrescribo mi metodo update
         con el de mi clase padre Rectangle
         """
-        super().update(*args, **kwargs)
+        if args:
+            if args is not None:
+                lista = ["id", "size", "x", "y"]
+                for i, j in zip(args, lista):
+                    setattr(self, j, i)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def to_dictionary(self):
         """
