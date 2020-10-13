@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-clase Rectangle que hereda de Base
+"""clase Rectangle que hereda de Base
 cuando se desean atributos privados en una clase,
 se deben delcarar e inicializar en el constructor _init_,
 adicionalmente es necesario crear sus
@@ -11,8 +10,7 @@ pero de ahi en adelante la idea es llamar
 a los atributos a partir de las funciones getter
 y setter y no directamente al atributo,
 osea acceder a ellos como si fueran publicos
-pero en realidad estamo accediendo es al setter o getter
-"""
+pero en realidad estamo accediendo es al setter o getter"""
 
 
 from models.base import Base
