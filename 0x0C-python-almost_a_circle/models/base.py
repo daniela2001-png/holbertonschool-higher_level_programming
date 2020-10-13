@@ -3,12 +3,15 @@
 """
 creo una clase padre llamada Base
 """
+import json
+
 
 class Base:
     """
     creo una instacia de clase privada
     e iniciclaizo con el constructor mis objetos
     """
+
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -20,3 +23,75 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """
+        retorna un json de los dicts
+        """
+        if list_dictionaries is None:
+            return "[]"
+        return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """
+        vamos a sobrescribir en un json los dicts de mis clases hijas
+        type <'str'>
+        """
+        if list_objs is not None:
+            filename = cls.__name__ + ".json"
+            my_lists_dict = []
+            for i in list_objs:
+                i = cls.to_dictionary(i)
+                # aqui creo mi lista de dicts
+                my_lists_dict.append(i)
+            lista_dict = cls.to_json_string(my_lists_dict)
+            with open(filename, "w") as f:
+                f.write(lista_dict)
+        else:
+            list_objs = []
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        convertimos de json string a una lista de dicts
+        mejor dicho pasamos de type<'str'> a type<'list'>
+        """
+        if json_string is not None:
+            return json.loads(json_string)
+        else:
+            json_string = []
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        metodo devuelve una instancia con todos los atributos ya establecidos:
+        el **dictionary sera nuestro kwargs para el metodo to dictionary()
+
+        """
+        # creo el dummy que sera la instacia fictisia de mi clase
+        dummy = 0
+        if cls.__name__ == "Rectangle":
+            dummy = cls(2, 4, 8, 10)
+            dummy.update(**dictionary)
+        if cls.__name__ == "Square":
+            dummy = cls(3, 4, 4)
+            dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        retornamos una lista de instancias de la clase actual
+        """
+        my_list = []
+        try:
+            filename = cls.__name__ + ".json"
+            with open(filename, "r") as f:
+                x = cls.from_json_string((f.read()))
+                for i in x:
+                    my_list.append(cls.create(**i))
+            return my_list
+        except:
+            return my_list
