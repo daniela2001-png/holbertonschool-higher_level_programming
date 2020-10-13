@@ -113,18 +113,20 @@ class Rectangle(Base):
         muestra el ancho y largo representado por
         el simbolo "#" aun no usamos "x" o "y"
         """
-        print((self.y) * "\n" + ((self.x) * " " + "#" * self.width + '\n')
-              * self.height, end="")
+        first = (self.y) * "\n"
+        second = ((self.x) * " " + "#" * self.width + '\n')
+        print(first + second * self.height, end="")
 
     def __str__(self):
         """
         string format de mi subclase
         """
-        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id,
-                                                                 self.x,
-                                                                 self.y,
-                                                                 self.width,
-                                                                 self.height)
+        i = self.id
+        x = self.x
+        y = self.y
+        w = self.width
+        h = self.height
+        return"[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(i, x, y, w, h)
 
     def update(self, *args, **kwargs):
         """
