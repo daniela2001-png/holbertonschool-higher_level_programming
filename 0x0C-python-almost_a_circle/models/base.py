@@ -55,9 +55,9 @@ class Base:
         convertimos de json string a una lista de dicts
         mejor dicho pasamos de type<'str'> a type<'list'>
         """
-        if json_string:
-            return json.loads(json_string)
-        return json_string
+        if json_string is None or json_string == "[]":
+            return []
+        return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
