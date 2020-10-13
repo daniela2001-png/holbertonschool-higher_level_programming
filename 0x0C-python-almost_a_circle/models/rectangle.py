@@ -24,11 +24,11 @@ class Rectangle(Base):
         """
         heredo id del padre
         """
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
     @property
     def width(self):
@@ -106,7 +106,7 @@ class Rectangle(Base):
         """
         retorna el area de un rectangulo
         """
-        return(self.width * self.height)
+        return self.width * self.height
 
     def display(self):
         """
