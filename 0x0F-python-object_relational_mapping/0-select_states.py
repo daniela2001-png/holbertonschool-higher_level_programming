@@ -12,9 +12,9 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", user=sys.argv[1],
                          passwd=sys.argv[2], db=sys.argv[3])
     c = db.cursor()
-    # hacemos el query SQL a nuetsra tabla state
+    # hacemos el query SQL a nuestra tabla state
     c.execute("""SELECT * FROM states
-                ORDER BY id ASC""")
+                ORDER BY states.id ASC""")
     # obtenemos todos los objetos del query
     for row in c.fetchall():
         print(row)
