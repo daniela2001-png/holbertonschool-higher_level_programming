@@ -16,7 +16,7 @@ if __name__ == "__main__":
     # agregamos el operador LIKE para encontrar patrones en el query
     c.execute("""SELECT * FROM states
                 WHERE name LIKE 'N%'
-                ORDER BY id ASC""")
+                ORDER BY states.id ASC""")
     # obtenemos todos los objetos del query
     for row in c.fetchall():
         print(row)
