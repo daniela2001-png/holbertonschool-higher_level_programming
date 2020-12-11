@@ -16,13 +16,11 @@ if __name__ == "__main__":
     c = db.cursor()
     # hacemos el query SQL a nuestra tabla state
     # agregamos el operador LIKE para encontrar patrones en el query
-    c.execute("""SELECT * FROM states
-                ORDER BY id ASC""")
+    c.execute("SELECT * FROM states\
+                WHERE name = '{}'".format(sys.argv[4]))
     # obtenemos todos los objetos del query
     for row in c.fetchall():
-        # aqui valido el match con el input dado
-        if (row[1] == sys.argv[4]):
-            print(row)
+        print(row)
 
     '''
     Este método cierra el cursor y db,
