@@ -15,7 +15,7 @@ if __name__ == "__main__":
     # hacemos el query SQL a nuestra tabla state
     # agregamos el operador LIKE para encontrar patrones en el query
     c.execute("""SELECT * FROM states
-                WHERE name LIKE 'N%'""")
+                WHERE name LIKE BINARY 'N%'""")
     # obtenemos todos los objetos del query
     for row in c.fetchall():
         print(row)
