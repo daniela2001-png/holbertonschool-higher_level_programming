@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 '''
 este modulo de python ejecuta mysqldb
 para hacer querys y ejecutarlos desde un script
