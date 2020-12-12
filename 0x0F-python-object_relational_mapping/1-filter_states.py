@@ -10,13 +10,12 @@ if __name__ == "__main__":
     ''' La secuencia de comandos debe tomar 3 argumentos: mysql username,\
         mysql password y databasename'''
     db = MySQLdb.connect(host="localhost", user=sys.argv[1],
-                         passwd=sys.argv[2], db=sys.argv[3])
+                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
     c = db.cursor()
     # hacemos el query SQL a nuestra tabla state
     # agregamos el operador LIKE para encontrar patrones en el query
     c.execute("""SELECT * FROM states
-                WHERE name LIKE 'N%'
-                ORDER BY states.id ASC""")
+                WHERE name LIKE 'N%'""")
     # obtenemos todos los objetos del query
     for row in c.fetchall():
         print(row)
