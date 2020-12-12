@@ -19,5 +19,8 @@ if __name__ == "__main__":
     session = Session()
     # obtenemos solamente el 1er objeto
     result = session.query(State).first()
-    print("{}: {}".format(result.id, result.name))
+    if (result):
+        print("{}: {}".format(result.id, result.name))
+    else:
+        print("Nothing")
     session.close()
