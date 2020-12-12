@@ -19,7 +19,7 @@ if __name__ == "__main__":
     session = Session()
     # obtenemos los nombres de esstado que concidan con el argv
     # y si es asi imprimimos el id de ese estado
-    result = session.query(State).filter(State.name == sys.argv[4]).one()
+    result = session.query(State).filter(State.name == sys.argv[4]).first()
     if (result):
         print("{}".format(result.id))
     else:
