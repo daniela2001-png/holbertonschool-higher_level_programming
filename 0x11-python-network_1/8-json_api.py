@@ -8,15 +8,18 @@ import requests
 import sys
 
 
+import requests
+import sys
+
+
 def searchapi():
+    """status"""
     if len(sys.argv) == 1:
         q = ""
     else:
         q = sys.argv[1]
 
-    result = requests.post(
-        "http://81d0e503c600.7b77981b.hbtn-cod.io:5000/search_user",
-        data={"q": q})
+    result = requests.post("http://0.0.0.0:5000/search_user", data={"q": q})
 
     try:
         data = result.json()
