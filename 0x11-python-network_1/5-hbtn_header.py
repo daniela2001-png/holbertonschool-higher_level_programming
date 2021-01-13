@@ -3,10 +3,9 @@
 using the module requests
 """
 
-
+import requests
+from sys import argv
 if __name__ == "__main__":
-    import requests
-    from sys import argv
     """
     que contiene le header X-Request-Id:
     identificación es generada (aleatoriamente) por el cliente
