@@ -8,7 +8,10 @@ import requests
 from sys import argv
 if __name__ == "__main__":
     response = requests.get(
-        "https://api.github.com/users/{}".format(argv[1]),
-        auth=HTTPBasicAuth(argv[1], argv[2]))
-
-    print(response.json().get("id"))
+        "https://api.github.com/user",
+        auth=HTTPBasicAuth(str(argv[1]), str(argv[2])))
+    try:
+        data = response.json()
+        print(data["id"])
+    except:
+        print("None")
