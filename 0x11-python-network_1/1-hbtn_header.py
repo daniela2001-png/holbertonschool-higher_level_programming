@@ -3,8 +3,6 @@
 request url intranet with argv
 using the module urllib
 """
-
-
 from urllib import request
 from sys import argv
 
